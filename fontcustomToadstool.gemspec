@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fontcustom/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "fontcustomToadstool"
-  gem.version       = FontcustomToadstool::VERSION
+  gem.name          = "fontcustomtoadstool"
+  gem.version       = Fontcustomtoadstool::VERSION
   gem.authors       = ["Yifei Zhang", "Joshua Gross", "Dale Sande"]
   gem.email         = ["yz@yifei.co", "joshua@gross.is", "dale.sande@gmail.com"]
   gem.summary       = %q{Generate custom icon webfonts from the comfort of the command line.}

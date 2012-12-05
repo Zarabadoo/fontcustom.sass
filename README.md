@@ -11,11 +11,13 @@ There are two difference between FontCustom and FontCustom.sass. The main differ
 
 The next difference is that I beat up on the [generator.rb](http://goo.gl/IGZi0) file so that this better suits the Toadstool framework. Specific placement of the generated font files and a generated Sass partial as well.
 
+Oh yeah, this is a 1:off gem `gem install fontcustomtoadstool`. 
+
 ##Installation
 ```sh
 # Requires FontForge
 brew install fontforge eot-utils ttfautohint
-gem install fontcustom
+gem install fontcustomtoadstool
 ```
 
 ##Usage
