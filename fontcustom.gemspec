@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fontcustom/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "fontcustom"
-  gem.version       = Fontcustom::VERSION
-  gem.authors       = ["Yifei Zhang", "Joshua Gross"]
-  gem.email         = ["yz@yifei.co", "joshua@gross.is"]
+  gem.name          = "fontcustomToadstool"
+  gem.version       = FontcustomToadstool::VERSION
+  gem.authors       = ["Yifei Zhang", "Joshua Gross", "Dale Sande"]
+  gem.email         = ["yz@yifei.co", "joshua@gross.is", "dale.sande@gmail.com"]
   gem.summary       = %q{Generate custom icon webfonts from the comfort of the command line.}
-  gem.description   = %q{Transforms EPS and SVG vectors into icon webfonts. Generates Bootstrap compatible CSS for easy inclusion in your projects.}
-  gem.homepage      = "http://endtwist.github.com/fontcustom/"
+  gem.description   = %q{Transforms EPS and SVG vectors into icon webfonts. Generates compatible CSS for Toadstool framework}
+  gem.homepage      = "https://github.com/blackfalcon/fontcustom.sass"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
