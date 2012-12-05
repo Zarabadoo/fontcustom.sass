@@ -31,7 +31,7 @@ module Fontcustom
     end
 
     def verify_or_create_output_dir
-      @output = options.output.nil? ? File.join(File.dirname(input), 'fontcustom') : options.output
+      @output = options.output.nil? ? File.join(File.dirname(input), 'public/fonts/') : options.output
       empty_directory(@output) unless File.directory?(@output)
     end
 
@@ -44,7 +44,7 @@ module Fontcustom
     end
 
     def cleanup_output_dir
-      css = File.join(@output, 'fontcustom.css')
+      css = File.join(@output, 'fontcustom.scss')
       old_name = if File.exists? css
                    line = IO.readlines(css)[5]                           # font-family: "Example Font";
                    line.scan(/".+"/)[0][1..-2].gsub(/\W/, '-').downcase  # => 'example-font'
@@ -81,7 +81,7 @@ module Fontcustom
       @classes = files.map {|file| File.basename(file)[0..-5].gsub(/\W/, '-').downcase }
       @path = File.basename(@path)
 
-      template('templates/fontcustom.css', File.join(@output, 'fontcustom.css'))
+      template('templates/fontcustom.scss', File.join(@output, '../../sass/typography/_fontcustom.scss'))
     end
   end
 end
