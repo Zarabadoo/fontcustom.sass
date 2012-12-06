@@ -1,5 +1,16 @@
-// *Font Custom - icon webfonts made simple */
+// Font Custom - icon webfonts made simple
+// ------------------------------------------------------------------
 
+// Placeholder selector to manage font family rules
+%fontcustom {
+  font-family: "<%= @name %>";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+// Font-face rules
 @font-face {
   font-family: "<%= @name %>";
   src: url("/fonts/<%= @path %>.eot?#iefix") format("embedded-opentype"),
@@ -10,58 +21,23 @@
   font-style: normal;
 }
 
-
-%fontcustom {
-  font-family: "<%= @name %>";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  text-decoration: inherit;
-}
-
+// `a` tag supporting rules
 a [class^="icon-"], a [class*=" icon-"] {
   display: inline-block;
   text-decoration: inherit;
 }
 
+// How to use 
+// ------------------------------------------------------------------
+// Below are generated placeholder class that can be easily extended throughout your project. We at the Toadstool
+// team believe that CSS rules should be extended in your CSS, not the DOM.
 
-
-// * makes the font 33% larger relative to the icon container */
-// .icon-large:before {
-//   vertical-align: top;
-//   font-size: 1.333em;
+// To use, from your CSS selector, simply extend one of the following rules like so:
+// .github {
+//   foo: bar;
+//   @extend %icon-github;
 // }
 
-// * keeps button heights with and without icons the same */
-// .btn [class^="icon-"], .btn [class*=" icon-"] {
-//   line-height: 0.9em;
-// }
-
-// li [class^="icon-"], li [class*=" icon-"] {
-//   display: inline-block;
-//   width: 1.25em;
-//   text-align: center;
-// }
-
-// * 1.5 increased font size for icon-large * 1.25 width */
-// li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
-//   width: 1.875em;
-// }
-
-// li[class^="icon-"], li[class*=" icon-"] {
-//   margin-left: 0;
-//   list-style-type: none;
-// }
-
-// li[class^="icon-"]:before, li[class*=" icon-"]:before {
-//   text-indent: -2em;
-//   text-align: center;
-// }
-
-// li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
-//   text-indent: -1.333em;
-// }
-
-// *Icon Classes */
+// Icon classes
 <% @classes.each_with_index do |name, index| %>
 %icon-<%= name %>:before { content: "\<%= (61696+index).to_s(16) %>"; @extend %fontcustom; }<% end %>
